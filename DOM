@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box {
+      border: 5px solid black;
+      height:60px;
+      width:78px;
+      margin-bottom: "50";
+      margin-left: "80px";
+    }
+  </style>
+</head>
+<body>
+  <p id="greeting"> Hello, World</p>
+  <img id="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/800px-Unofficial_JavaScript_logo_2.svg.png" alt="javscript" height="100" width="100">
+  <button onclick="changetext()">Click me</button>
+
+  <p class="changetext">hello,world</p>
+  <p class="changetext">Hello,universe</p>
+  <button onclick="changeAllText()">Change All Text</button>
+
+  <h2> Heading 1</h2>
+  <h2> Heading 2</h2>
+  <button onclick="changeHeading()">Click me</button> 
+
+  <div id="box"></div>
+  <button onclick="changecolor()">change_color</button>
+</body>
+
+
+<!-- by using id() -->
+<script>
+ 
+  function changetext()
+  {
+   let p= document.getElementById("greeting");
+   p.innerHTML="hello,universal";
+   p.style.color="red";
+   p.style.backgroundColor="blue";
+   let l= document.getElementById("image");
+   l.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfkMYb955fj7IRiw-8g6gmn5GoZzKni1Kv8g&s";
+  }
+
+
+<!-- by using className() -->
+
+function changeAllText()
+{
+  let p=document.getElementsByClassName("changetext");
+for(var i=0;i<p.length;i++)
+{
+  p[i].textContent="Text changed";
+  p[i].style.border="2px solid black";
+  p[i].style.fontsize="24px";
+  p[i].style.backgroundColor="pink";
+}
+}
+
+ 
+// by using tagName 
+  function changeHeading()
+{
+    let p=document.getElementsByTagName("h2");
+for(var i=0;i<p.length;i++)
+{
+  p[i].textContent="Changed Hegreeading!";
+  p[i].style.border="2px solid  green";
+  p[i].style.fontsize="24px";
+  p[i].style.backgroundColor="yellow";
+}
+}
+function changecolor(){
+  let p=document.getElementById("box");
+    p.style.backgroundColor="blue";
+    p.style.borderColor="yellow";
+  
+  
+  //p.style.color="blue";=""
+}
+
+</script>
+
+</html>
